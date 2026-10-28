@@ -40,6 +40,7 @@ AskUserQuestion で、GitHub か Azure DevOps かを選んでもらう（選択�
 | コードリポジトリの構成・役割・clone 元 | backend（API）`git@github.com:acme-inc/acme_backend.git` | backend（API）`git@ssh.dev.azure.com:v3/acme-org/ACME/acme_backend` | リポジトリ一覧、ワークスペースの構成図 |
 
 - clone 元は、組み立てずに、GitHub や Azure DevOps の画面の「Clone」に表示される URL をそのまま書いてもらう（Azure DevOps は「組織/プロジェクト/リポジトリ」の 3 段になるため）。
+- リモートのリポジトリ名は問わない（Azure DevOps では `document`、`backend` のように案件名を付けないことが多い）。手元のフォルダ名は、リモートの名前によらず常に `<案件名>_document`、`<案件名>_backend` の形にする。スキルは手元のフォルダ名でリポジトリを探すため。
 - コードリポジトリは、この時点で作られていなくてよい。未作成のものは clone 元を「未作成」とする。
 - 各リポジトリの言語やツールは、ここでは聞かない。コードリポジトリを作るときに、そのリポジトリの `CLAUDE.md` の「開発環境の前提」に書く（`workspace/repo-snippets/README.md` を参照）。
 
@@ -57,7 +58,7 @@ uv run ${CLAUDE_SKILL_DIR}/scripts/apply_project.py --slug <案件名> --name "<
 uv run ${CLAUDE_SKILL_DIR}/scripts/apply_project.py --slug <案件名> --name "<表示名>" --git-host <github|azure-devops> --doc-repo-url "<clone 元>" --backlog-key <キー> --admin "<依頼先>"
 ```
 
-スクリプトは、clone 元が選んだ置き場所の URL の形になっているか、リポジトリ名が `<案件名>_document` か、を確かめる。合わなければエラーで止まるので、ユーザーに URL を確かめてもらう。
+スクリプトは、clone 元が選んだ置き場所の URL の形になっているかを確かめる。合わなければエラーで止まるので、ユーザーに URL を確かめてもらう。リモートのリポジトリ名が `<案件名>_document` と違う場合は注意を表示するだけで、そのまま進める。
 
 スクリプトは、置き場所に合わせて次のものも埋める。
 
@@ -69,7 +70,7 @@ uv run ${CLAUDE_SKILL_DIR}/scripts/apply_project.py --slug <案件名> --name "<
 
 | プレースホルダー | ファイル | 埋める内容 |
 |---|---|---|
-| `{{コードリポジトリの行}}` | `00_プロジェクト概要/リポジトリ一覧.md` | コードリポジトリの行（リポジトリ、役割、clone 元、既定のブランチ）。clone 元は 1-2 で聞いた URL をそのまま書く |
+| `{{コードリポジトリの行}}` | `00_プロジェクト概要/リポジトリ一覧.md` | コードリポジトリの行（手元のフォルダ、役割、clone 元、既定のブランチ）。手元のフォルダは `<案件名>_backend` の形、clone 元は 1-2 で聞いた URL をそのまま書く |
 | `{{コードリポジトリの構成図}}` | `workspace/CLAUDE.md` | 構成図のコードリポジトリの行（`├── acme_backend/  # バックエンド` の形） |
 
 あわせて、`.claude/settings.json` の `permissions.additionalDirectories` に、コードリポジトリ（`../<案件名>_backend` など）を追加する。

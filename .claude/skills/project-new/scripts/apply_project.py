@@ -100,8 +100,11 @@ def main() -> None:
         if not m:
             sys.exit(f"clone 元 {args.doc_repo_url!r} は {host['name']} の URL の形ではありません。"
                      f"例: {host['url_example']}")
+        # リモートのリポジトリ名は問わない（Azure DevOps では Project がまとまりを表すので、
+        # `document` のように案件名を付けないことが多い）。手元のフォルダ名は常に <案件名>_document にする
         if m.group("repo") != f"{args.slug}_document":
-            sys.exit(f"clone 元のリポジトリ名が {m.group('repo')!r} です。{args.slug}_document にしてください。")
+            print(f"[注意] リモートのリポジトリ名は {m.group('repo')!r} です。"
+                  f"手元のフォルダは {args.slug}_document として扱います。")
 
         replacements = {
             "xxxxx": args.slug,

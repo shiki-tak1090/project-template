@@ -8,10 +8,12 @@
 
 ### 1. 案件の置き場所に空のリポジトリを作る
 
-案件のリポジトリは、GitHub と Azure DevOps のどちらに置いてもかまいません。置き場所に `acme_document` という空のリポジトリを作ります。
+案件のリポジトリは、GitHub と Azure DevOps のどちらに置いてもかまいません。置き場所に、ドキュメント用の空のリポジトリを作ります。
 
-- GitHub: README も .gitignore も付けずに作る
-- Azure DevOps: 案件のプロジェクトの中に、「Add a README」を外して作る
+- GitHub: `acme_document` という名前で、README も .gitignore も付けずに作る
+- Azure DevOps: 案件のプロジェクトの中に、「Add a README」を外して作る。プロジェクトが案件のまとまりを表すので、名前は `document` のように案件名を付けなくてもかまいません
+
+リモートのリポジトリ名が何であっても、手元では `acme/acme_document` というフォルダに clone します（次の手順 2）。
 
 コードのリポジトリ（`acme_backend` など）は、この時点では作らなくてかまいません。
 
