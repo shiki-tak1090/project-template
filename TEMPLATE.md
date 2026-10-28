@@ -6,9 +6,14 @@
 
 以下では、案件名を `acme` とします。案件名は英小文字・数字・`_`・`-` で付けます（フォルダ名とリポジトリ名に使うため）。
 
-### 1. GitHub に空のリポジトリを作る
+### 1. 案件の置き場所に空のリポジトリを作る
 
-GitHub で `acme_document` という空のリポジトリを作ります（README も .gitignore も付けない）。コードのリポジトリ（`acme_backend` など）は、この時点では作らなくてかまいません。
+案件のリポジトリは、GitHub と Azure DevOps のどちらに置いてもかまいません。置き場所に `acme_document` という空のリポジトリを作ります。
+
+- GitHub: README も .gitignore も付けずに作る
+- Azure DevOps: 案件のプロジェクトの中に、「Add a README」を外して作る
+
+コードのリポジトリ（`acme_backend` など）は、この時点では作らなくてかまいません。
 
 ### 2. 親フォルダを作り、ひな型を clone する
 
@@ -30,7 +35,7 @@ git clone git@github.com:shiki-tak1090/project-template.git acme/acme_document
 
 起動したら `/project-new` を実行します。次のことを対話で行います。
 
-- プロジェクトの表示名、GitHub のオーナー、Backlog のプロジェクトキーなどを聞き、ひな型の `xxxxx` などを置き換える
+- Git の置き場所（GitHub か Azure DevOps）、プロジェクトの表示名、手順 1 で作ったリポジトリの clone 元、Backlog のプロジェクトキーなどを聞き、ひな型の `xxxxx` などを置き換える
 - リポジトリの構成（backend、frontend など）を聞き、`00_プロジェクト概要/リポジトリ一覧.md` を埋める（各リポジトリの言語やツールは、コードリポジトリを作るときにそのリポジトリの中で宣言する）
 - Git の履歴を作り直すか、ひな型の履歴を残すかを確認する
 - 手順 1 で作ったリポジトリに push する（実行前に確認する）

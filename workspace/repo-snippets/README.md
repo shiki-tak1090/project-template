@@ -59,13 +59,13 @@ clone した後に、最初に 1 回実行するコマンド。
 - 作業は `develop` から `feature/<課題キー>-<内容>` のブランチを切り、PR は `develop` に向ける
 - このリポジトリのコミットに、他のリポジトリの変更を混ぜない
 - タスクは Backlog（プロジェクトキー: `{{Backlogのプロジェクトキー}}`）で管理する。ブランチ名とコミットメッセージに課題キー（例: `{{Backlogのプロジェクトキー}}-123`）を入れる
-- PR は GitHub で作り、PR のリンクを Backlog の課題にコメントする
+- PR は {{Gitの置き場所}} で作り、PR のリンクを Backlog の課題にコメントする
 - タスクの実装は `/project-dev:implement <タスク ID>` で行う
 ```
 
 ## 2. .claude/settings.json
 
-このリポジトリで起動した Claude Code から設計書を読めるようにし、実装用のプラグインを有効にする。マーケットプレイスの `repo` は、ドキュメントリポジトリの `.claude/settings.json` と同じ値にする。
+このリポジトリで起動した Claude Code から設計書を読めるようにし、実装用のプラグインを有効にする。マーケットプレイスの `repo` は、ドキュメントリポジトリの `.claude/settings.json` と同じ値にする。プラグインのリポジトリは GitHub にあるので、案件の Git の置き場所が Azure DevOps でも `"source": "github"` のままでよい。
 
 ```json
 {

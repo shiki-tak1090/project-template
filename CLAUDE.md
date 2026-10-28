@@ -35,7 +35,7 @@ xxxxx_document/
 | ツール | 必要な版 | 用途 | 確認コマンド | 必須 |
 |---|---|---|---|---|
 | Git | 任意 | 全般 | `git --version` | 必須 |
-| GitHub CLI | 任意 | PR の作成・確認 | `gh --version` | 必須 |
+{{PR作成ツールの行}}
 | uv | 任意 | 設計書の変換スクリプトの実行 | `uv --version` | 必須 |
 | Node.js | >=20 | Mermaid CLI の実行 | `node --version` | 必須 |
 | Mermaid CLI | 任意 | 設計書の図の変換（npm で入れる） | `mmdc --version` | 必須 |
@@ -69,6 +69,6 @@ xxxxx_document/
 
 ## タスク管理
 
-タスクと PR へのレビューのやり取りは Backlog（プロジェクトキー: `{{Backlogのプロジェクトキー}}`）で行う。コードと PR は GitHub に置き、PR のリンクを Backlog の課題にコメントする。ブランチ名とコミットメッセージには Backlog の課題キー（例: `{{Backlogのプロジェクトキー}}-123`）を入れる。
+タスクと PR へのレビューのやり取りは Backlog（プロジェクトキー: `{{Backlogのプロジェクトキー}}`）で行う。コードと PR は {{Gitの置き場所}} に置き、PR のリンクを Backlog の課題にコメントする。ブランチ名とコミットメッセージには Backlog の課題キー（例: `{{Backlogのプロジェクトキー}}-123`）を入れる。
 
 Claude Code は Backlog に接続しない。課題の起票、コメント、ステータスの変更は人が行う。スキルは、貼り付ける文面（課題の本文、PR のコメント）を用意する。
