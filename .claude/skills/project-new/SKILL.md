@@ -14,7 +14,7 @@ disable-model-invocation: true
 
 1. カレントディレクトリの名前が `<案件名>_document` で、その親フォルダの名前が `<案件名>` であること。ここから案件名を読み取る。違う場合は、`TEMPLATE.md` の手順 2 のとおりに clone し直してもらう。
 2. `TEMPLATE.md` があること（ひな型のままの状態であること）。ない場合は、すでに作成済みのプロジェクトなので何もしない。
-3. `.claude/settings.json` のマーケットプレイスの `repo` が `YOUR_GITHUB_OWNER/...` のままでないこと。ままなら、ひな型の初期設定（`TEMPLATE.md` の「ひな型の初期設定」）が済んでいないので、先に済ませてもらう。
+3. `.claude/settings.json` のマーケットプレイスの `repo` に、プラグインのリポジトリ（`<オーナー>/claude-plugins`）が設定されていること。空や `YOUR_GITHUB_OWNER/...` のような仮の値なら、ひな型の管理者に `TEMPLATE.md` の「プラグインの参照先を変えるとき」の手順を済ませてもらう。
 4. `git status` に未コミットの変更がないこと。
 
 ## 1. 対話で聞くこと
