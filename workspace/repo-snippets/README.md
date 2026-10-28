@@ -9,6 +9,7 @@
 - 「開発環境の前提」は `/project-init` が読み、入っているかを確認する
 - 「セットアップ」のコマンドは `/project-init` が実行しない。参画したメンバーが自分で最初に実行する
 - 「テスト・lint・ビルド」は `/project-dev:implement` がテストの実行に使う
+- 「アーキテクチャと実装規約」の節は、手で書かない。基本設計のアーキテクチャ（`02_基本設計/アーキテクチャ.md`）を決めた後、このリポジトリで `/project-dev:setup-architecture` を実行して作る。あわせて、層の依存を検査する仕組みと「アーキテクチャの検査」のコマンドが追加される
 
 言語の版は、表に書くだけでなく、言語の標準的な版の指定ファイル（`.nvmrc`、`.python-version`、`go.mod`、`.tool-versions` など）にも書く。`/project-init` は両方を読み、食い違っていれば報告する。
 
@@ -52,6 +53,7 @@ clone した後に、最初に 1 回実行するコマンド。
 | テスト（1 ファイル） | （例: `uv run pytest tests/test_xxx.py`） |
 | lint | （例: `uv run ruff check .`） |
 | 型チェック | （例: `uv run mypy src`） |
+| アーキテクチャの検査 | （`/project-dev:setup-architecture` が追加する） |
 | ビルド | （例: なし） |
 
 ## Git とタスク管理

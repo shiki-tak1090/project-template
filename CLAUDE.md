@@ -12,7 +12,7 @@ Obsidian の保管庫として閲覧する前提で書く。
 xxxxx_document/
 ├── 00_プロジェクト概要/     # 目的、用語集、リポジトリ一覧（/project-init が読む）
 ├── 01_要件定義/             # 要件定義書（フェーズごとにサブフォルダ）
-├── 02_基本設計/             # アーキテクチャ、画面一覧、画面遷移
+├── 02_基本設計/             # アーキテクチャ（実装の方針の正本）、画面一覧、画面遷移
 ├── 03_詳細設計/             # 機能ごとの詳細設計
 ├── 04_API仕様/              # API設計書.md と openapi.yaml（全機能の統合仕様）
 ├── 05_DB設計/               # テーブル定義.md と ER図.md（全機能の統合仕様）
@@ -57,6 +57,7 @@ xxxxx_document/
 | 要件定義書・設計書の作成、レビュー | `xxxxx_document` | `/project-docs:system-design` |
 | 設計書の Word・Excel への変換 | `xxxxx_document` | `/project-docs:design-export` |
 | 確定した詳細設計の実装タスクへの分解 | `xxxxx_document` | `/project-dev:design-to-tasks` |
+| アーキテクチャの方針を、コードリポジトリの実装規約と検査に落とし込む（開発の初期と、方針を変えたとき） | 対象のコードリポジトリの直下 | `/project-dev:setup-architecture` |
 | 議事録などその他のドキュメントの作成 | `xxxxx_document` | （テンプレートを使って直接依頼する） |
 | 複数のリポジトリにまたがる変更の検討 | 親フォルダ `xxxxx/` | — |
 | タスクの実装と PR の作成 | 対象のコードリポジトリの直下 | `/project-dev:implement <タスク ID>` |

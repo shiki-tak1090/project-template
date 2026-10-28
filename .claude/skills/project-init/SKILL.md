@@ -120,6 +120,7 @@ clone 済みのコードリポジトリそれぞれについて、`workspace/rep
 
 - `CLAUDE.md` に「開発環境の前提」「セットアップ」「テスト・lint・ビルド」の節があり、例のままでなく埋まっているか
 - `CLAUDE.md` に、ドキュメントリポジトリ（`../<案件名>_document`）への参照があるか
+- `CLAUDE.md` に「アーキテクチャと実装規約」の節（`/project-dev:setup-architecture` が作るもの）と、「テスト・lint・ビルド」の表に「アーキテクチャの検査」の行があるか。なければ、`/project-dev:setup-architecture` の実行を案内する（`/project-dev:implement` は、この節がないと実装に入らない）
 - `.claude/settings.json` の `permissions.additionalDirectories` に `../<案件名>_document` があるか
 - `.claude/settings.json` で、マーケットプレイスと `project-dev@project-plugins` が有効になっているか。マーケットプレイスの `repo` が、このリポジトリの設定と同じ値か
 
