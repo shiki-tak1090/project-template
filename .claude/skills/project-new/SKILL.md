@@ -82,12 +82,16 @@ uv run ${CLAUDE_SKILL_DIR}/scripts/apply_project.py --check
 
 履歴を作り直す場合は、`.git` を削除して作り直すことになるため、実行前にもう一度確認する。
 
-その後、次の順で進める。
+既定のブランチは `develop` にする（作業は `develop` で行い、`main` はリリース済みのドキュメント用）。次の順で進める。
 
-1. `main` ブランチで、変更をすべてコミットする（コミットメッセージ: `初期構成`）
-2. `main` から `develop` ブランチを作る
-3. `origin` を、ユーザーが GitHub に作った空のリポジトリ（`git@github.com:<オーナー>/<案件名>_document.git`）に向ける。ひな型の履歴を残す場合は、ひな型の remote を `template` という名前に変えて残す
-4. **push の前に、push 先の URL とブランチをユーザーに見せて確認を取る。** 了承を得たら、`main` と `develop` を push する
+1. `develop` ブランチに切り替える
+   - 履歴を作り直す場合: `.git` を削除したあと、`git init -b develop` で作り直す
+   - ひな型の履歴を残す場合: `git switch -c develop` で、ひな型の `main` から `develop` を作る
+2. `develop` で、変更をすべてコミットする（コミットメッセージ: `初期構成`）
+3. `develop` から `main` ブランチを作る（`git branch main`）。作業ブランチは `develop` のままにしておく
+4. `origin` を、ユーザーが GitHub に作った空のリポジトリ（`git@github.com:<オーナー>/<案件名>_document.git`）に向ける。ひな型の履歴を残す場合は、ひな型の remote を `template` という名前に変えて残す
+5. **push の前に、push 先の URL とブランチをユーザーに見せて確認を取る。** 了承を得たら、**`develop` を先に** push し、続けて `main` を push する（`git push -u origin develop`、`git push origin main`）。空のリポジトリでは、最初に push したブランチが GitHub の既定のブランチになるため
+6. GitHub の既定のブランチが `develop` になったことを確かめる（`git ls-remote --symref origin HEAD` の出力が `refs/heads/develop` を指していること）。`develop` でなければ、GitHub のリポジトリの Settings → General → Default branch で `develop` に変えるよう、ユーザーに伝える（設定の変更は代行しない）
 
 GitHub の空のリポジトリがまだ作られていなければ、作ってもらうよう伝えて、push の手前で止まる。リポジトリの作成は代行しない。
 
