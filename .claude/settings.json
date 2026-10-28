@@ -1,0 +1,18 @@
+{
+  "extraKnownMarketplaces": {
+    "project-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "shiki-tak1090/claude-plugins"
+      },
+      "autoUpdate": true
+    }
+  },
+  "enabledPlugins": {
+    "project-docs@project-plugins": true,
+    "project-dev@project-plugins": true
+  },
+  "permissions": {
+    "additionalDirectories": []
+  }
+}

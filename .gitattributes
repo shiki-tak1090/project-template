@@ -1,0 +1,9 @@
+# Windows と Mac のメンバーが混在しても差分が出ないよう、テキストの改行は LF にそろえる
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jfif binary
+*.docx binary
+*.xlsx binary
+*.pdf binary

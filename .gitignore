@@ -1,0 +1,8 @@
+# 設計書の変換結果（生成物）
+exports/
+
+# Obsidian の個人設定
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+.DS_Store
