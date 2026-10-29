@@ -1,6 +1,6 @@
 # API仕様
 
-API の統合仕様を管理します。`API設計書.md` と `openapi.yaml` は常に同じ内容に保ちます。
+API の一覧と統合仕様を管理します。`API一覧.md` は基本設計で作り、`API設計書.md` と `openapi.yaml`（API定義書）は詳細設計で機能ごとに書き足します。`API設計書.md` と `openapi.yaml` は常に同じ内容に保ち、どちらにある API も `API一覧.md` に載せます。
 
 ## ドキュメント一覧
 
