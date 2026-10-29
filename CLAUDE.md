@@ -57,7 +57,7 @@ xxxxx_document/
 
 ### 納品物の一覧
 
-顧客と取り決めた納品物と、それを書くファイル。`/project-docs:system-design` はこの表に従って作る文書を決め、`/project-docs:design-export` は「形式」の列に従って変換する。顧客と取り決めた納品物が違う場合は、案件を始めるときにこの表を直す。
+顧客と取り決めた納品物と、それを書くファイル。`/project-docs:basic-design` はこの表に従って作る文書を決め、`/project-docs:design-export` は「形式」の列に従って変換する。顧客と取り決めた納品物が違う場合は、案件を始めるときにこの表を直す。
 
 | 工程 | 納品物 | ファイル | 形式 |
 |---|---|---|---|
@@ -80,7 +80,7 @@ xxxxx_document/
 
 ## ドキュメント作成ルール
 
-- Markdown と Mermaid で書く。記法の詳細は、`project-docs` プラグインの `system-design` スキルにある記法ルールに従う
+- Markdown と Mermaid で書く。記法の詳細は、`project-docs` プラグインの `design-export` スキルにある記法ルール（`references/markdown-rules.md`）に従う
 - 文書間のリンクは Obsidian の `[[]]` 記法を使う
 - 新しい文書は `99_テンプレート/` の対応するテンプレートから作る
 - 文書の先頭に作成日と版、末尾に変更履歴を書く。版はファイル名ではなく文書内で管理する
@@ -91,7 +91,8 @@ xxxxx_document/
 | やること | 起動するディレクトリ | 使うスキル |
 |---|---|---|
 | 開発環境の確認とセットアップ | `xxxxx_document` | `/project-init` |
-| 要件定義書・設計書の作成、レビュー | `xxxxx_document` | `/project-docs:system-design` |
+| 基本設計の作成、レビュー | `xxxxx_document` | `/project-docs:basic-design` |
+| 機能ごとの詳細設計の作成、レビュー | `xxxxx_document` | `/project-docs:detailed-design <機能名>` |
 | 設計書の Word・Excel への変換 | `xxxxx_document` | `/project-docs:design-export` |
 | 確定した詳細設計の実装タスクへの分解 | `xxxxx_document` | `/project-dev:design-to-tasks` |
 | 開発標準を、コードリポジトリの実装規約と検査に落とし込む（開発の初期と、開発標準を変えたとき） | 対象のコードリポジトリの直下 | `/project-dev:setup-architecture` |
