@@ -39,7 +39,7 @@ clone した後に、最初に 1 回実行するコマンド。
 
 - 要件定義: `../xxxxx_document/01_要件定義/`
 - 詳細設計: `../xxxxx_document/03_詳細設計/`
-- API の統合仕様: `../xxxxx_document/04_API仕様/`（`openapi.yaml` を正とする）
+- API の統合仕様: `../xxxxx_document/04_API仕様/`（方式設計で決めた API の方式の正本。`/project-dev:setup-architecture` が「アーキテクチャと実装規約」に場所を書く）
 - DB の統合仕様: `../xxxxx_document/05_DB設計/`
 - 実装タスク: `../xxxxx_document/97_タスク分解/`
 

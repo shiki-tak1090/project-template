@@ -1,6 +1,6 @@
 # {{API名}}
 
-（この API 群の概要を記述。`04_API仕様/API設計書.md` に節を追加するときの雛形として使う。`openapi.yaml` にも同じ内容を書く）
+（この API 群の概要を記述。方式設計で決めた API の方式が REST と OpenAPI のときに、`04_API仕様/API設計書.md` に節を追加する雛形として使う。`openapi.yaml` にも同じ内容を書く）
 
 ## `{{METHOD}} /api/v1/{{path}}`
 
